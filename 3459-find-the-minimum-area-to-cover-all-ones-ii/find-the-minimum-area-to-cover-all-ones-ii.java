@@ -24,12 +24,8 @@ class Solution {
         m = g.length;
         n = g[0].length;
 
-        int ans = Integer.MAX_VALUE;
-
-     
-        ans = Math.min(ans, minArea(0, m - 1, 0, n - 1));
-
-       
+        int ans = Integer.MAX_VALUE;     
+        ans = Math.min(ans, minArea(0, m - 1, 0, n - 1)); 
         for (int c = 0; c < n - 1; c++) {
             int left  = minArea(0, m - 1, 0, c);
             int right = minArea(0, m - 1, c + 1, n - 1);
@@ -41,7 +37,6 @@ class Solution {
             int bottom = minArea(r + 1, m - 1, 0, n - 1);
             ans = Math.min(ans, top + bottom);
         }
-
      
         for (int c1 = 0; c1 < n - 2; c1++) {
             for (int c2 = c1 + 1; c2 < n - 1; c2++) {
@@ -59,8 +54,7 @@ class Solution {
                 ans = Math.min(ans, a + b + c);
             }
         }
-
-      
+   
         for (int c = 0; c < n - 1; c++) {
             for (int r = 0; r < m - 1; r++) {
                 
