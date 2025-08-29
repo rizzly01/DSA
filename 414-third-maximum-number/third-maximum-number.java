@@ -4,14 +4,13 @@ class Solution {
         Integer first = null, second = null, third = null;
 
         for (int num : nums) {
-            // Skip duplicates
+
             if ((first != null && num == first) || 
                 (second != null && num == second) || 
                 (third != null && num == third)) {
                 continue;
             }
 
-            // Update top 3 maximums
             if (first == null || num > first) {
                 third = second;
                 second = first;
@@ -23,8 +22,6 @@ class Solution {
                 third = num;
             }
         }
-
-        // If third max doesn't exist, return the maximum
         return (third == null) ? first : third;
     }
 }
